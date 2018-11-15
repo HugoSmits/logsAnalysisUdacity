@@ -2,7 +2,7 @@
 
 ## Description
 
-#### Your task is to create a reporting tool that prints out reports (in plain text) based on the data in the database. This reporting tool is a Python program using the psycopg2 module to connect to the database.
+#### The task is to create a reporting tool that prints out reports (in plain text) based on the data in the database. This reporting tool is a Python program using the psycopg2 module to connect to the database.
 
 #### The following source code will answer the next 3 questions:
 
@@ -47,7 +47,7 @@
 - ##### VirtualBox, which you can get from this [download page](https://www.virtualbox.org/wiki/Downloads).
 - ##### Vagrant, which you can get from this [download page](https://www.vagrantup.com/downloads.html).
 
-##### You will also need a Unix-style terminal program. On Mac or Linux systems, you can use the built-in Terminal. On Windows, we recommend Git Bash, which is installed with the Git version control software.
+##### You will also need a Unix-style terminal program. On Mac or Linux systems, you can use the built-in Terminal. On Windows, I recommend Git Bash, which is installed with the Git version control software.
 
 ##### Once you have VirtualBox and Vagrant installed, open a terminal and run the following commands:
 ```
@@ -64,15 +64,15 @@ vagrant up
 
 ## Requisites
 
-##### Views must be created in vagrant/psql environment before the c.executes can run the selects !
+##### Views must be created in vagrant/psql environment before the selects can run be run!
 
 ## Download the data
 
-##### Next, download the data [here](https://github.com/HugoSmits/logsAnalysisUdacity). You can fork the repository and clone it to your local git repository. The file needed is called newsdata.sql the rest our personal answers to the project. Put this file into the vagrant directory, which is shared with your virtual machine.
+##### Next, download the data [here](https://github.com/HugoSmits/logsAnalysisUdacity). You can fork the repository and clone it to your local git repository. The file needed is called newsdata.sql the rest are personal answers to the project. Put this file into the vagrant directory, which is shared with your virtual machine.
 
-##### With the repository you can find the file called Vagrantfile which will help you set up your vagrant environment with the right configurations. BEWARE: config.vm.box_download_insecure is set to TRUE. Doesn't verify ssl certificates. Line can be removed or altered at said file. Functioning can't be guaranteed if done so.
+##### Within the repository you can find the file called Vagrantfile which will help you set up your vagrant environment with the right configurations. BEWARE: config.vm.box_download_insecure is set to TRUE. Doesn't verify ssl certificates. Line can be removed or altered at said file. Setup can't be guaranteed if done so.
 
-##### To load the data, cd into the vagrant directory and follow the command show in "How to connect and access themand 
+##### To load the data, cd into the vagrant directory and follow the command show in "How to connect and access the database. 
 
 
 ## How to connect and access the database
@@ -101,7 +101,7 @@ autopep8 --in-place -a --max-line-length 79 logsAnalysis.py
 
 ## Code solution example
 
-##### An example of the code used to generate an correct output can be found in **_logsAnalysis.py_**
+##### An example of the code used to generate a correct output can be found in **_logsAnalysis.py_**
 
 ## Output solution example
 

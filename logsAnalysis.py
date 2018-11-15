@@ -12,6 +12,7 @@ import json
 
 DBNAME = "news"
 
+
 def get_month(month):
     if month == '1':
         monthString = "January"
@@ -40,6 +41,7 @@ def get_month(month):
     else:
         monthString = "Invalid Month"
     return monthString
+
 
 def get_posts_ex1():
     db = psycopg2.connect(database=DBNAME)
