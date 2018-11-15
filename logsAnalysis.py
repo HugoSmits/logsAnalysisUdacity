@@ -57,11 +57,11 @@ def get_posts_ex1():
     posts_new = [tuple(map(str, i)) for i in posts]
 
     for x in posts_new:
-        string_json_first = (json.dumps(x[0]).rpartition('"')[0])[1:]
-        string_json_second = (json.dumps(x[1]).rpartition('"')[0])[1:]
+        str_json_1 = (json.dumps(x[0]).rpartition('"')[0])[1:]
+        str_json_2 = (json.dumps(x[1]).rpartition('"')[0])[1:]
 
-        concatenation_elements = string_json_first + \
-            ' -- ' + string_json_second + " views"
+        concatenation_elements = str_json_1 + \
+            ' -- ' + str_json_2 + " views"
 
         f.write(concatenation_elements + "\r\n")
         print(
@@ -89,11 +89,11 @@ def get_posts_ex2():
     posts_new = [tuple(map(str, i)) for i in posts]
 
     for x in posts_new:
-        string_json_first = (json.dumps(x[0]).rpartition('"')[0])[1:]
-        string_json_second = (json.dumps(x[1]).rpartition('"')[0])[1:]
+        str_json_1 = (json.dumps(x[0]).rpartition('"')[0])[1:]
+        str_json_2 = (json.dumps(x[1]).rpartition('"')[0])[1:]
 
-        concatenation_elements = string_json_first + \
-            ' -- ' + string_json_second + " views"
+        concatenation_elements = str_json_1 + \
+            ' -- ' + str_json_2 + " views"
 
         f.write(concatenation_elements + "\r\n")
         print(
@@ -124,17 +124,17 @@ def get_posts_ex3():
 
     for x in posts_new:
         str_json_1 = (json.dumps(x[0]).rpartition('"')[0])[1:]
-        string_json_2 = (json.dumps(x[1]).rpartition('"')[0])[1:]
+        str_json_2 = (json.dumps(x[1]).rpartition('"')[0])[1:]
 
         str_json_1_split, str_json_2_split = str_json_1.split()
-        stringa, stringb, stringc = str_json_1_split.split('-')
+        stra, strb, strc = str_json_1_split.split('-')
 
-        string_month = get_month(stringb[1])
+        str_month = get_month(strb[1])
 
-        string_json_1_rounded = str(round(float(string_json_2), 2))
+        str_json_1_rounded = str(round(float(str_json_2), 2))
 
-        concatenation_elements = string_month + ' ' + stringc + ', ' + \
-            stringa + ' -- ' + string_json_1_rounded + "%" + " errors"
+        concatenation_elements = str_month + ' ' + strc + ', ' + \
+            stra + ' -- ' + str_json_1_rounded + "%" + " errors"
 
         f.write(concatenation_elements + "\r\n")
         print(
