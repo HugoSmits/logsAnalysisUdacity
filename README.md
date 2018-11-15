@@ -21,7 +21,7 @@
 8. [Code solution example](#code-solution-example)
 9. [Output solution example](#output-solution-example)
 10. [Views created](#views-created)
-11. [Execute Selects](#execute-selects)
+11. [Execute selects in psql with views](#execute-selects-in-psql-with-views)
 12. [Contribuition](#contribuition)
 13. [Licensing info](#licensing-info)
 14. [WebBio](#webbio)
@@ -139,7 +139,7 @@ autopep8 --in-place -a --max-line-length 79 logsAnalysis.py
     - ##### CREATE VIEW StatisticsPercentage AS select * , ( (errorstatustotal / cast(total as float) ) * 100) as errorpercentage from Statistics;
     - ##### DEPENDENCY: Statistics
 
-## Execute Selects 
+## Execute selects in psql with views
 
 - ##### Ex1: select title , subtotal from SubTotalTitleView order by subtotal DESC; 
 - ##### Ex2: select name , sum(subtotal) as Total from AuthorViews group by 1 order by 2 DESC;
