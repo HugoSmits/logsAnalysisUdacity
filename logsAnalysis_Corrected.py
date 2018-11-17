@@ -13,36 +13,6 @@ import json
 DBNAME = "news"
 
 
-def get_month(month):
-    if month == '1':
-        monthString = "January"
-    elif month == '2':
-        monthString = "February"
-    elif month == '3':
-        monthString = "March"
-    elif month == '4':
-        monthString = "April"
-    elif month == '5':
-        monthString = "May"
-    elif month == '6':
-        monthString = "June"
-    elif month == '7':
-        monthString = "July"
-    elif month == '8':
-        monthString = "August"
-    elif month == '9':
-        monthString = "September"
-    elif month == '10':
-        monthString = "October"
-    elif month == '11':
-        monthString = "November"
-    elif month == '12':
-        monthString = "December"
-    else:
-        monthString = "Invalid Month"
-    return monthString
-
-
 def get_posts_ex1():
     db = psycopg2.connect(database=DBNAME)
     f = open('Output.txt', 'w')
@@ -126,9 +96,9 @@ def get_posts_ex3():
     f.write("Solution to ex 3: " + "\r\n")
     c = db.cursor()
     query = """
-    SELECT date_trunc('day', time) AS day,
-           ((count(*) filter (WHERE status != '200 OK') /
-            cast(count(*) AS float)) *100 ) AS errorpercentage
+    SELECT to_char(TIME::date,'FMMonth FMDD, YYYY') AS day,
+           round( ((count(*) filter (WHERE status != '200 OK') /
+            cast(count(*) AS numeric) ) *100), 2 ) AS errorpercentage
     FROM log
     GROUP BY 1
     HAVING ((count(*) filter (WHERE status != '200 OK') /
@@ -143,15 +113,8 @@ def get_posts_ex3():
         str_json_1 = (json.dumps(x[0]).rpartition('"')[0])[1:]
         str_json_2 = (json.dumps(x[1]).rpartition('"')[0])[1:]
 
-        str_json_1_split, str_json_2_split = str_json_1.split()
-        stra, strb, strc = str_json_1_split.split('-')
-
-        str_month = get_month(strb[1])
-
-        str_json_1_rounded = str(round(float(str_json_2), 2))
-
-        concatenation_elements = str_month + ' ' + strc + ', ' + \
-            stra + ' -- ' + str_json_1_rounded + "%" + " errors"
+        concatenation_elements = str_json_1 + ' -- ' \
+            + str_json_2 + "%" + " errors"
 
         f.write(concatenation_elements + "\r\n")
         print(
